@@ -6,7 +6,7 @@ html {
   background: radial-gradient(#fcfcfc, #efefef);
   font-family: sans-serif;
   font-size: 20px;
-  
+  color: #104b75;
 }
 
 #main {
@@ -15,7 +15,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #104b75;
+  
 }
 
 #title {
@@ -35,4 +35,32 @@ html {
   padding: 1vw;
   opacity: 0.9;
 
+}
+
+#welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 7vw;
+}
+
+@media screen and (min-width: 1000px) {
+  #title {
+    font-size: 150px;
+    padding: 10px;
+  }
+  
+  #in-dev {
+    font-size: 30px;
+  }
+  
+  #contact {
+    font-size: 30px;
+    padding: 10px;
+  }
+  
+  #welcome {
+    font-size: 70px;
+  }
 }
