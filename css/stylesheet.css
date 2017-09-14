@@ -22,27 +22,29 @@ html {
   font-size: 15vw;
   padding: 1vw;
   margin: 0;
+  opacity: 0;
 }
 
 #in-dev {
   font-style: italic;
-  opacity: 0.5;
+  opacity: 0;
   font-size: 2vw;
 }
 
 #contact {
   font-size: 3vw;
   padding: 1vw;
-  opacity: 0.9;
+  opacity: 0;
 
 }
 
 #welcome {
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 7vw;
+  opacity: 0;
 }
 
 @media screen and (min-width: 1000px) {

@@ -8,19 +8,20 @@ var time = 0;
 var canvas = document.createElement('canvas');
 var context = canvas.getContext("2d");
 var firstCall = true
-var main = document.getElementById('main');
+var title = document.getElementById('title');
 var welcome = document.getElementById('welcome');
 var email = document.getElementById('contact');
 var indev = document.getElementById('in-dev');
 
 setup();
 
+// sets default values and initiates actions
 function setup() {
   canvas.width = w;
   canvas.height = h;
   document.body.appendChild(canvas);
-  main.style.opacity = 0;
-  welcome.style.opacity = 1;
+  title.style.opacity = 0;
+  welcome.style.opacity = 0;
   welcome.style.top = welcomePos + "%";
   email.style.opacity = 0;
   indev.style.opacity = 0;
@@ -32,6 +33,7 @@ function setup() {
   timer = setInterval(fadeInWelcome, 1);
 }
 
+// welcome message fade and glide in
 function fadeInWelcome() {
   if(welcomePos < 50) {
     count = (49 - welcomePos) * 0.015;
@@ -43,6 +45,7 @@ function fadeInWelcome() {
   welcome.style.top = welcomePos + "%";
 }
 
+// welcome message glide and fade out
 function fadeOutWelcome() {
   if(firstCall) {
     firstCall = false;
@@ -59,14 +62,17 @@ function fadeOutWelcome() {
   welcome.style.top = welcomePos + "%";
 }
 
+// initiates what needs to be done to draw circle and show title
+// calls drawCircle every millisecond
 function startTimer() {
   count = 0;
   clearInterval(timer);
   timer = setInterval(drawCircle, 1);
 }
 
+// ease out animation of circle draw and opacity for title
 function drawCircle() {
-  main.style.opacity = time / (Math.PI * 2);
+  title.style.opacity = time / (Math.PI * 2);
   count += 1;
   context.beginPath();
   context.clearRect(0,0,w,h);
@@ -82,6 +88,7 @@ function drawCircle() {
   }
 }
 
+// grow and fade out animation
 function clearCircle() {
   context.globalAlpha -= 0.01;
   context.beginPath();
@@ -99,6 +106,7 @@ function clearCircle() {
   }
 }
 
+// fade in email
 function showEmail() {
   count += 0.01;
   email.style.opacity = count;
@@ -109,6 +117,7 @@ function showEmail() {
   }
 }
 
+// fade in info
 function showInfo() {
   count += 0.004 * multiplier;
   indev.style.opacity = count;
