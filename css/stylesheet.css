@@ -1,68 +1,94 @@
 html {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
   background: radial-gradient(#fcfcfc, #efefef);
-  font-family: sans-serif;
+  font-family: 'Bree Serif', serif;
   font-size: 20px;
   color: #104b75;
 }
 
-#main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  
-}
-
-#title {
-  font-size: 15vw;
-  padding: 1vw;
+body {
   margin: 0;
-  opacity: 0;
+  padding: 0;
 }
 
-#in-dev {
-  font-style: italic;
-  opacity: 0;
-  font-size: 2vw;
+nav {
+  margin: 10px auto 22px auto;
+  text-align: center;
 }
 
-#contact {
-  font-size: 3vw;
-  padding: 1vw;
-  opacity: 0;
-
+nav a {
+  font-size: 25px;
+  text-decoration: none;
+  font-size: 10vw;
+  text-align: center;
+  transition: 0.4s ease;
 }
 
-#welcome {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 7vw;
-  opacity: 0;
+nav a:link, nav a:visited {
+  color: #104b75;
 }
 
+#logo:hover, #logo:active {
+  
+  text-shadow: 0 0 1px #104b75;
+}
+
+.main-tile, .sec-tile {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 90%;
+  box-shadow: 0 0 15px grey;
+  transition: 0.4s ease;
+}
+
+.main-tile:hover, .main-tile:active, .sec-tile:hover, .sec-tile:active {
+  box-shadow: 0 0 25px grey;
+  width: 91%;
+}
+
+
+/* switch from block to inline layout for secondary tiles */
+@media screen and (min-width: 600px) {
+  #logo {
+    font-size: 60px;
+  }
+  
+  .secondary {
+  display: block;
+  margin: 0 auto 10px auto;
+  width: 90%;
+  }
+  
+  .sec-tile {
+    display: inline;
+    width: 49%;
+  }
+  
+  .sec-tile:hover, .sec-tile:active {
+    display: inline;
+    width: 49.5%;
+  }
+  
+  #sec-left {
+    float: left;
+  }
+  
+  #sec-right {
+    float: right;
+  }
+}
+
+/* fixed width after 1000px */
 @media screen and (min-width: 1000px) {
-  #title {
-    font-size: 150px;
-    padding: 10px;
+  
+  .main-tile:hover, .main-tile:active {
+    width: 910px;
   }
   
-  #in-dev {
-    font-size: 30px;
+  .main-tile, .secondary {
+    width: 900px;
   }
   
-  #contact {
-    font-size: 30px;
-    padding: 10px;
-  }
-  
-  #welcome {
-    font-size: 70px;
-  }
 }
+
