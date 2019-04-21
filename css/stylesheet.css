@@ -48,6 +48,27 @@ nav a:link, nav a:visited {
   width: 91%;
 }
 
+.container {
+  width: 550px;
+}
+
+.readable-text {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+.primary-text {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.secondary-text {
+  font-size: 16px;
+  font-weight: normal;
+}
 
 /* switch from block to inline layout for secondary tiles */
 @media screen and (min-width: 600px) {
